@@ -55,26 +55,4 @@ CREATE TABLE Cart_Items (
     FOREIGN KEY (product_id) REFERENCES Products(id)
 );
 
--- Siparişler tablosu
-CREATE TABLE Orders (
-    id INT PRIMARY KEY,
-    user_id INT,
-    total_amount DECIMAL(10, 2) NOT NULL,
-    shipping_address VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES Users(id)
-);
 
--- Sipariş öğeleri tablosu
-CREATE TABLE Order_Items (
-    id INT PRIMARY KEY,
-    order_id INT,
-    product_id INT,
-    quantity INT NOT NULL,
-    price DECIMAL(10, 2) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (order_id) REFERENCES Orders(id),
-    FOREIGN KEY (product_id) REFERENCES Products(id)
-);
