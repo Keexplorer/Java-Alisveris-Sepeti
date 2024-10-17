@@ -1,4 +1,4 @@
-package tr.edu.ogu.ceng.shopingcart;
+package tr.edu.ogu.ceng.shopingcart.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
