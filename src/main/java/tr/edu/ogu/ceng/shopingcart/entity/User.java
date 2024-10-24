@@ -1,4 +1,4 @@
-package tr.edu.ogu.ceng.shopingcart;
+package tr.edu.ogu.ceng.shopingcart.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -6,12 +6,12 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "Users")
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, unique = true, length = 50)
     private String username;

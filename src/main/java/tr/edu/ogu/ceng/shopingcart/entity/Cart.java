@@ -1,4 +1,4 @@
-package tr.edu.ogu.ceng.shopingcart;
+package tr.edu.ogu.ceng.shopingcart.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -8,12 +8,12 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "Carts")
+@Table(name = "carts")
 public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")

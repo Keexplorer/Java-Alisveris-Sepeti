@@ -1,4 +1,4 @@
-package tr.edu.ogu.ceng.shopingcart;
+package tr.edu.ogu.ceng.shopingcart.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,15 +7,23 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "Categories")
-public class Category {
+@Table(name = "cart_items")
+public class CartItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @Column(nullable = false, length = 100)
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "cart_id", referencedColumnName = "id")
+    private Cart cart;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    private Product product;
+
+    @Column(nullable = false)
+    private int quantity;
 
     @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt;
@@ -23,3 +31,4 @@ public class Category {
     @Column(name = "updated_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime updatedAt;
 }
+
