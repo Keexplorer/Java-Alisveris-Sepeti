@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import tr.edu.ogu.ceng.shopingcart.dto.SettingDto;
 import tr.edu.ogu.ceng.shopingcart.entity.Setting;
 import tr.edu.ogu.ceng.shopingcart.service.SettingService;
 
@@ -17,7 +18,7 @@ public class SettingController {
     private final SettingService settingService;
 
     @GetMapping("/{id}")
-    public Setting getSetting(@PathVariable Long id){
+    public SettingDto getSetting(@PathVariable Long id){
 
         return settingService.getSetting(id);
 

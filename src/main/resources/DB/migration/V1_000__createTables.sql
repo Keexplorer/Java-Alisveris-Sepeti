@@ -3,7 +3,12 @@ CREATE TABLE Categories (
     id INT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by INT,
+    updated_by INT,
+    deleted_by INT,
+    deleted_at TIMESTAMP,
+    version INT DEFAULT 1
 );
 
 -- Kullanıcılar tablosu
@@ -16,7 +21,12 @@ CREATE TABLE Users (
     last_name VARCHAR(50),
     address VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by INT,
+    updated_by INT,
+    deleted_by INT,
+    deleted_at TIMESTAMP,
+    version INT DEFAULT 1
 );
 
 -- Ürünler tablosu
@@ -30,6 +40,11 @@ CREATE TABLE Products (
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by INT,
+    updated_by INT,
+    deleted_by INT,
+    deleted_at TIMESTAMP,
+    version INT DEFAULT 1,
     category_id INT,
     FOREIGN KEY (category_id) REFERENCES Categories(id)
 );
@@ -40,6 +55,11 @@ CREATE TABLE Carts (
     user_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by INT,
+    updated_by INT,
+    deleted_by INT,
+    deleted_at TIMESTAMP,
+    version INT DEFAULT 1,
     FOREIGN KEY (user_id) REFERENCES Users(id)
 );
 
@@ -51,8 +71,11 @@ CREATE TABLE Cart_Items (
     quantity INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by INT,
+    updated_by INT,
+    deleted_by INT,
+    deleted_at TIMESTAMP,
+    version INT DEFAULT 1,
     FOREIGN KEY (cart_id) REFERENCES Carts(id),
     FOREIGN KEY (product_id) REFERENCES Products(id)
 );
-
-

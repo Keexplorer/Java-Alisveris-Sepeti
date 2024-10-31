@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @Entity
 @Table(name = "setting")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //FIXME DTO ile çöz
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) //FIXME DTO ile çöz
 @Data
 public class Setting {
 
