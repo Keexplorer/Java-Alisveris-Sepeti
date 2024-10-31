@@ -28,13 +28,21 @@ public class CartItemDto {
 
     private LocalDateTime updatedAt;
 
-    private Integer createdBy;
+    private Long createdBy;
 
-    private Integer updatedBy;
+    private Long updatedBy;
 
-    private Integer deletedBy;
+    private Long deletedBy;
 
     private LocalDateTime deletedAt;
 
     private Integer version;
+
+    public void setCartId(long l) {
+        cart.setId(l);
+    }
+
+    public void setProductId(long l) {
+        product.setId(l);
+    }
 }

@@ -20,12 +20,12 @@ public class CategoryDto {
 
     private LocalDateTime updatedAt;
 
-    private Integer createdBy;
+    private Long createdBy;
 
-    private Integer updatedBy;
+    private Long updatedBy;
 
 
-    private Integer deletedBy;
+    private Long deletedBy;
 
     private LocalDateTime deletedAt;
 

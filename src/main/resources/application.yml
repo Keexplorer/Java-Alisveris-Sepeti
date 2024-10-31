@@ -4,8 +4,9 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ilerijava
-    username: devuser
-    password: devpassword
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
 
 microservices:
   user: http://localhost:8007

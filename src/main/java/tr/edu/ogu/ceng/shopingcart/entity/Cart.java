@@ -41,4 +41,19 @@ public class Cart {
 
     @Version
     private Integer version;
+
+    @PrePersist
+    public void prePersist() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+        if (this.version == null) {
+            this.version = 1; // ilk versiyon ayarlama
+        }
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
+        this.version += 1; // versiyon güncelleme
+    }
 }
