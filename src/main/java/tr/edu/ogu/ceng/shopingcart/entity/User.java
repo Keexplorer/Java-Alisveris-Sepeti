@@ -49,6 +49,5 @@ public class User {
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
 
-    @Version
     private Integer version;
 }

@@ -1,6 +1,6 @@
 -- Kategoriler tablosu
 CREATE TABLE Categories (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -13,7 +13,7 @@ CREATE TABLE Categories (
 
 -- Kullanıcılar tablosu
 CREATE TABLE Users (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE Users (
 
 -- Ürünler tablosu
 CREATE TABLE Products (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     description TEXT,
     price DECIMAL(10, 2) NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE Products (
 
 -- Sepetler tablosu
 CREATE TABLE Carts (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     user_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -65,7 +65,7 @@ CREATE TABLE Carts (
 
 -- Sepet öğeleri tablosu
 CREATE TABLE Cart_Items (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     cart_id INT,
     product_id INT,
     quantity INT NOT NULL,

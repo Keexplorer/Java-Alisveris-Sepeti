@@ -1,12 +1,5 @@
-server:
-  port: 8005
 
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/ilerijava
-    username: devuser
-    password: devpassword
-    driver-class-name: org.postgresql.Driver
 
 microservices:
   user: http://localhost:8007

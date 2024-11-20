@@ -30,7 +30,6 @@ public class ServiceTest {
     @Test
     public void test(){
         Cart cart = new Cart();
-        cart.setId(1L);
         // Save the cart to the database
         cartService.saveCart(cart);
 
