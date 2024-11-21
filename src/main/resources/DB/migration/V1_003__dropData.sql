@@ -1,0 +1,1 @@
+Delete from Setting where id = 1
