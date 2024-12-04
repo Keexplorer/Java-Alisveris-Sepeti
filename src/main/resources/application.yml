@@ -8,6 +8,10 @@ spring:
     password: devpassword
     driver-class-name: org.postgresql.Driver
 
+springdoc:
+  api-docs:
+    path: /api-docs
+
 microservices:
   user: http://localhost:8007
   order: http://localhost:8003

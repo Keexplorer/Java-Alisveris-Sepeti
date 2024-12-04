@@ -1,19 +1,18 @@
 package tr.edu.ogu.ceng.shopingcart;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import tr.edu.ogu.ceng.shopingcart.entity.Cart;
-import tr.edu.ogu.ceng.shopingcart.entity.User;
 import tr.edu.ogu.ceng.shopingcart.repository.CartRepository;
 import tr.edu.ogu.ceng.shopingcart.service.CartService;
 @SpringBootTest
-public class TestCartService {
+public class TestCartService extends Container{
     @Autowired
     CartService service;
 
-    @Mock
+    @MockBean
     CartRepository repository;
 
     @Test
