@@ -13,11 +13,11 @@ springdoc:
     path: /api-docs
 
 microservices:
-  user: http://localhost:8007
-  order: http://localhost:8003
-  gateway: http://localhost:8001
-  payment: http://localhost:8006
-  product: http://localhost:8002
-  invoice: http://localhost:8008
-  notification: http://localhost:8004
-  shipment: http://localhost:8011
+  user: 192.168.137.195:8007
+  order: 192.168.137.169:8003
+  gateway: 192.168.137.149:8001
+  payment: 192.168.137.52:8006
+  product: 192.168.137.35:8002
+  invoice: 192.168.137.140:8008
+  notification: 192.168.137.111:8004
+  shipment: 192.168.137.179:8011
