@@ -14,7 +14,7 @@ import static junit.framework.TestCase.assertEquals;
 
 @SpringBootTest
 @TestConfiguration
-public class TestUserService  {
+public class TestUserService {
     @Autowired
     UserService service;
     @MockBean
@@ -26,9 +26,19 @@ public class TestUserService  {
         user.setUsername("emirhan");
         user.setEmail("emirhan@emirhan.com");
         service.saveUser(user);
+
+        Long id= user.getId();
+
+
 //        User user2 = service.;
 //        assertEquals("testuser", user2.getUsername());
 //        System.out.println(user2.getUsername());
-        repository.save(user);
+
+        service.deleteUser(user);
+        if (repository.existsById(id)==false){
+            System.out.println("Delete is successful!");
+        }
+        else
+            System.out.println("Could not delete user!");
     }
 }

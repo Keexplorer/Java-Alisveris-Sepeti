@@ -33,6 +33,15 @@ public class UserService {
 
         }
 
+        public void deleteUser(User user){
+            userRepository.delete(user);
+        }
+
+
+
+
+
+
         public User getUserFromUserGroup(){
             return restClient.get().uri("http://192.168.137.195:8007/api/users/testuser").accept(MediaType.APPLICATION_JSON).retrieve().body(User.class);
         }

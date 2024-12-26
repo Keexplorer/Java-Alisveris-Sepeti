@@ -21,7 +21,8 @@ public class TestCartItemService extends Container{
         CartItem cartItem = new CartItem();
         cartItem.setQuantity(1);
         service.saveCartItem(cartItem);
-
-        service.deleteCartItem(cartItem);
+        System.out.println(cartItem.getQuantity());
+        service.updateQuantity(2,cartItem);
+        System.out.println(cartItem.getQuantity());
     }
 }

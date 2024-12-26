@@ -12,7 +12,9 @@ import java.util.List;
 public interface  UserRepository  extends JpaRepository<User,Long> {
 
     public User getByUsername(String username);
+    public void deleteById(Long id);
 
     @Query(value = "Select u from User u", nativeQuery = false)
     public List<User> getAllUsers();
+
 }
