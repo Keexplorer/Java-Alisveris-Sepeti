@@ -17,6 +17,23 @@ public class TestCategoryRepository extends Container{
         Category category = new Category();
         category.setName("q");
         repository.save(category);
+        if(repository.existsById(category.getId()))
+        {
+            System.out.println("Mevcut");
+        }
+        else
+        {
+            System.out.println("Degil");
+        }
+        repository.deleteById(category.getId());
+        if(repository.existsById(category.getId()))
+        {
+            System.out.println("Mevcut");
+        }
+        else
+        {
+            System.out.println("Degil");
+        }
     }
 
 }

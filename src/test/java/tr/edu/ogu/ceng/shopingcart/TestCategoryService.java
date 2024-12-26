@@ -9,17 +9,27 @@ import tr.edu.ogu.ceng.shopingcart.repository.CategoryRepository;
 import tr.edu.ogu.ceng.shopingcart.service.CategoryService;
 
 @SpringBootTest
-public class TestCategoryService extends Container{
+public class TestCategoryService {
     @Autowired
     CategoryService service;
 
-    @MockBean
+
     CategoryRepository repository;
 
     @Test
     public void test(){
-        Category category = new Category();
-        category.setName("d");
-        service.saveCategory(category);
+        Category category=new Category();
+        category.setName("denemee");
+        repository.save(category);
+
+        service.deleteCategory(category);
+
+        repository.save(category);
+
+
+       // service.updateCategory(category, 1L);
+
+       // service.deleteCategory(category);
+
     }
 }
