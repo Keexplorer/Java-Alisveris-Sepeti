@@ -73,9 +73,9 @@ public class ProductService {
 
     }
 
-    public Product getUserFromOthers(){
+    public Product getProductFromProductService(){
 
-         return restClient.get().uri("http://192.168.137.195:8007/").accept(MediaType.APPLICATION_JSON).retrieve().body(Product.class);
+         return restClient.get().uri("http://192.168.137.195:8007/api/v1/urunler/1").accept(MediaType.APPLICATION_JSON).retrieve().body(Product.class);
 
 
     }
