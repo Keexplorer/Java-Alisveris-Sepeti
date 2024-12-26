@@ -19,7 +19,7 @@ public class CartItemController {
     private final CartItemService cartItemService;
 
     @GetMapping("/{id}")
-    @Operation(summary = "Example Endpoint for CartItem", description = "This is an example endpoint for demonstration purposes.")
+    @Operation(summary = "CartItem", description = "CartItem.")
     public CartItemDto getCartItem(@PathVariable Long id){
 
         return cartItemService.getCartItem(id);

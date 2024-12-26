@@ -10,13 +10,28 @@ import tr.edu.ogu.ceng.shopingcart.repository.CartItemRepository;
 public class TestCartItemRepository extends Container {
 
     @Autowired
-    CartItemRepository repository;
+    CartItemRepository cartItemRepository;
 
     @Test
     void test(){
         CartItem cartItem = new CartItem();
         cartItem.setQuantity(2);
-        repository.save(cartItem);
+        cartItemRepository.save(cartItem);
+        if (cartItemRepository.existsById(cartItem.getId()) ==true){
+
+            System.out.println("CartItem var");
+        }else{
+            System.out.println("CartItem yok");
+        }
+
+        cartItemRepository.deleteById(cartItem.getId());
+
+        if (cartItemRepository.existsById(cartItem.getId()) ==true){
+
+            System.out.println("CartItem var");
+        }else{
+            System.out.println("CartItem yok");
+        }
     }
 
 }

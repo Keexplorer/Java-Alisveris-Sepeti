@@ -41,6 +41,17 @@ public class ProductService {
 
     }
 
+    public void deleteProduct(Product product){
+        productRepository.delete(product);
+    }
+
+//    public Product deleteProduct(Product product){
+//
+//        return
+//
+//
+//    }
+
     private ProductDto convertToDto(Product product) {
         ProductDto productDto = new ProductDto();
         productDto.setId(product.getId());

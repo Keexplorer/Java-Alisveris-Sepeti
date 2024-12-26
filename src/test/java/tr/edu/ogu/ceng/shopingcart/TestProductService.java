@@ -24,5 +24,8 @@ public class TestProductService extends Container{
         product.setPrice(2.1);
         product.setStockQuantity(10);
         service.saveProduct(product);
+
+
+        service.deleteProduct(product);
     }
 }

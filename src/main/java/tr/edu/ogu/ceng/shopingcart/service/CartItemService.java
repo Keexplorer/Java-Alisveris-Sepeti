@@ -28,6 +28,12 @@ public class CartItemService {
         return cartItemRepository.save(cartItem);
 
     }
+
+    public  void deleteCartItem(CartItem cartItem){
+
+        cartItemRepository.delete(cartItem);
+
+    }
     private CartItemDto convertToDto(CartItem cartItem) {
         CartItemDto cartItemDto = new CartItemDto();
         cartItemDto.setCart(cartItem.getCart());
