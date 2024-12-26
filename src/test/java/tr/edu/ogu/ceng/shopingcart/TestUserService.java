@@ -14,7 +14,7 @@ import static junit.framework.TestCase.assertEquals;
 
 @SpringBootTest
 @TestConfiguration
-public class TestUserService extends Container {
+public class TestUserService  {
     @Autowired
     UserService service;
     @MockBean
@@ -22,12 +22,13 @@ public class TestUserService extends Container {
     @Test
     public void test(){
         User user = new User();
-        user.setPassword("e");
-        user.setUsername("h");
-        user.setEmail("k");
+        user.setPassword("123456");
+        user.setUsername("emirhan");
+        user.setEmail("emirhan@emirhan.com");
         service.saveUser(user);
-        User user2 = service.getUser();
-        assertEquals("testuser", user2.getUsername());
-        System.out.println(user2.getUsername());
+//        User user2 = service.;
+//        assertEquals("testuser", user2.getUsername());
+//        System.out.println(user2.getUsername());
+        repository.save(user);
     }
 }

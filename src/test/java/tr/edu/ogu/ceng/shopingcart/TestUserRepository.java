@@ -8,7 +8,7 @@ import tr.edu.ogu.ceng.shopingcart.repository.UserRepository;
 import static junit.framework.TestCase.assertEquals;
 
 @SpringBootTest
-public class TestUserRepository extends Container {
+public class TestUserRepository  {
 
     @Autowired
     UserRepository repository;
@@ -16,11 +16,11 @@ public class TestUserRepository extends Container {
     @Test
     public void test(){
         User user = new User();
-        user.setUsername("e");
-        user.setEmail("e");
-        user.setPassword("a");
+        user.setUsername("emirhan");
+        user.setEmail("emirhan@emirhan.com");
+        user.setPassword("123456");
         repository.save(user);
-        User u = repository.getByUsername("e");
+        User u = repository.getByUsername("emirhan");
         assertEquals(u, user);
        // List<User> alluser = null;
        // alluser.add(user);
