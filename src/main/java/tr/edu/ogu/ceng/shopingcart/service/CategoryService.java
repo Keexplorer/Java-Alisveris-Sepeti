@@ -29,7 +29,15 @@ public class CategoryService {
         return categoryRepository.save(category);
 
     }
+    public void deleteCategory(Category category){
+        categoryRepository.delete(category);
+    }
+    public void updateCategory(Category category,Long id){
+        //Category category1=categoryRepository.getReferenceById(id);
+        //category1.setName(category.getName());
+        //categoryRepository.save(category1);
 
+    }
     private CategoryDto convertToDto(Category category) {
         CategoryDto categoryDto = new CategoryDto();
         categoryDto.setId(category.getId());
