@@ -7,7 +7,7 @@ import tr.edu.ogu.ceng.shopingcart.entity.Cart;
 import tr.edu.ogu.ceng.shopingcart.repository.CartRepository;
 
 @SpringBootTest
-public class TestCartRepository extends Container{
+public class TestCartRepository extends Container {
 
     @Autowired
     CartRepository repository;
@@ -15,7 +15,22 @@ public class TestCartRepository extends Container{
     @Test
     public void test(){
         Cart cart = new Cart();
+        cart.setUpdatedBy(1);
         repository.save(cart);
+        if(repository.existsById(cart.getId())){
+            System.out.println("cart var");
+        }
+        else{
+            System.out.println("Cart yok");
+        }
+        repository.deleteById(cart.getId());
+
+        if(repository.existsById(cart.getId())){
+            System.out.println("cart var");
+        }
+        else{
+            System.out.println("Cart yok");
+        }
     }
 
 }
