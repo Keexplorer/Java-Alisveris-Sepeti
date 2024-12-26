@@ -28,13 +28,13 @@ public class Cart {
     private LocalDateTime updatedAt;
 
     @Column(name = "created_by")
-    private Long createdBy;
+    private Integer createdBy;
 
     @Column(name = "updated_by")
-    private Long updatedBy;
+    private Integer updatedBy;
 
     @Column(name = "deleted_by")
-    private Long deletedBy;
+    private Integer deletedBy;
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
